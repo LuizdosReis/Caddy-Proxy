@@ -15,6 +15,8 @@
         format console # set access log format to console mode
     }
 
+    reverse_proxy /api/* {$BACKEND_HOST}
+
     reverse_proxy {$FRONTEND_HOST} # proxy all requests for /* to the frontend, configure this variable in the service settings
 
     # the handle_path directive will strip /api/ from the path before proxying
@@ -27,5 +29,5 @@
     # if your backend's api routes do start with /api/ then you wouldn't want to strip the path prefix
     # if so, comment out the above handle_path block, and uncomment this reverse_proxy directive
     # change paths as needed
-    reverse_proxy {$BACKEND_HOST} # configure this variable in the service settings
+    # reverse_proxy {$BACKEND_HOST} # configure this variable in the service settings
 }
