@@ -17,10 +17,10 @@
     }
 
     reverse_proxy /api/* {$BACKEND_HOST} {
-       transport http {
+        transport http {
        		dial_timeout 60s
        		response_header_timeout 90s
-       }
+        }
     }
 
     reverse_proxy {$FRONTEND_HOST} # proxy all requests for /* to the frontend, configure this variable in the service settings
