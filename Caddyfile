@@ -21,7 +21,7 @@
             dial_timeout 2s
             response_header_timeout 30s
         }
-	}
+    }
 
     reverse_proxy {$FRONTEND_HOST} # proxy all requests for /* to the frontend, configure this variable in the service settings
 
