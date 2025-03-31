@@ -20,6 +20,8 @@
         to {$BACKEND_HOST}
         transport http {
             dial_timeout 60s
+            read_timeout 120s
+            write_timeout 120s
             response_header_timeout 90s
         }
     }
