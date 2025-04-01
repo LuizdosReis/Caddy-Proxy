@@ -24,6 +24,8 @@
             write_timeout 120s
             response_header_timeout 90s
         }
+        health_uri /api/actuator/health
+        health_timeout 60s
     }
 
     reverse_proxy {$FRONTEND_HOST} # proxy all requests for /* to the frontend, configure this variable in the service settings
